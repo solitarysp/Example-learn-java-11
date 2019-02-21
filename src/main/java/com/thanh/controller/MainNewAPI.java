@@ -1,6 +1,8 @@
-package com.thanh;
+package com.thanh.controller;
 
 import com.thanh.model.Student;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.nio.CharBuffer;
 import java.nio.DoubleBuffer;
@@ -8,18 +10,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
+@RestController("/newAPI")
 public class MainNewAPI {
     static List<Student> student = new ArrayList<Student>();
 
-    public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            student.add(new Student(i));
-        }
+    @GetMapping()
+    public void testtt() {
         // localVariableLambada();
         //  charSequenceCompare();
         //   characterToString();
         //  stringNew();
-       // stringBufferStringBuilder();
+        stringBufferStringBuilder();
     }
 
     public static final void localVariableLambada() {
