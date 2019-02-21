@@ -2,21 +2,24 @@ package com.thanh;
 
 import com.thanh.model.Student;
 
+import java.nio.CharBuffer;
+import java.nio.DoubleBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class Main {
+public class MainNewAPI {
     static List<Student> student = new ArrayList<Student>();
 
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {
             student.add(new Student(i));
         }
-        localVariableLambada();
-        charSequenceCompare();
-        characterToString();
-        stringNew();
+        // localVariableLambada();
+        //  charSequenceCompare();
+        //   characterToString();
+        //  stringNew();
+       // stringBufferStringBuilder();
     }
 
     public static final void localVariableLambada() {
@@ -80,5 +83,17 @@ public class Main {
         String sTrailing = cTrailing + "abc" + cTrailing;
         System.out.println(" check là khoảng trắng " + Character.isWhitespace(cTrailing));
         System.out.println(sTrailing.stripTrailing());
+    }
+
+    public static final void stringBufferStringBuilder() {
+        System.out.println("======================== StringBuffer =============");
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("123");
+        System.out.println("CompareTo StringBuffer " + stringBuffer.compareTo(new StringBuffer("123")));
+
+        System.out.println("======================== StringBuffer =============");
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("123");
+        System.out.println("CompareTo StringBuilder " + stringBuilder.compareTo(new StringBuilder("123")));
     }
 }
